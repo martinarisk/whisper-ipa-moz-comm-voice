@@ -28,6 +28,7 @@ async def process_line(language_id, text, filename, outfile, lock, pygoruut):
         return
 
     if not response or not response.Words:
+        print("Noresp on:", language_id, "Text:", text)
         return
 
     phonetic_line = " ".join(word.Phonetic for word in response.Words)
